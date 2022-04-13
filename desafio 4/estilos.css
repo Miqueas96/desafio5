@@ -6,6 +6,7 @@
 body {
   font-family: "nunito", sans-serif;
 }
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -25,13 +26,21 @@ header .nav .nav-list li a {
   text-decoration: none;
   text-transform: uppercase;
   color: white;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+header .nav .nav-list li a:hover {
+  opacity: 0.5;
+  color: black;
+  transition: color 0.5s;
 }
 
 .header {
   grid-area: header;
   display: flex;
   justify-content: space-between;
-  background-color: rgb(210, 138, 243);
+  background-image: linear-gradient(rgb(222, 180, 241), rgb(210, 138, 243));
+  box-shadow: 3px 5px 5px rgb(69, 58, 70);
   align-items: center;
   padding: 1.5rem;
   z-index: 1;
@@ -45,10 +54,11 @@ header .nav .nav-list li a {
 .main {
   grid-area: main;
   text-align: center;
-  background-color: rgb(212, 152, 212);
+  background-image: linear-gradient(rgb(212, 152, 212), rgb(185, 79, 185));
   font-family: "special elite", sans-serif;
 }
 h1 {
+  animation: efecto-abajo 1.5s ease;
   font-size: 3.5rem;
   padding: 2rem;
 }
@@ -116,6 +126,11 @@ footer img {
 }
 .galeria img {
   width: 100%;
+  opacity: 1;
+  transition: opacity 1s;
+}
+.galeria img:hover {
+  opacity: 0.5;
 }
 /* CONTACTO */
 .grid-container-contacto {
@@ -196,6 +211,16 @@ fieldset legend {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+@keyframes efecto-abajo {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 
